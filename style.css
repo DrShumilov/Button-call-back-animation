@@ -1,0 +1,96 @@
+body {
+	font-family: Arial, sans-serif;
+	background: #000;
+}
+.case {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
+}
+.pulse {
+	width: 90px;
+	height: 90px;
+	color: #fff;
+	text-align: center;
+	background: #04AFFE;
+	border-radius: 50%;
+	position: relative;
+	cursor: pointer;
+}
+.phone {
+	position: absolute;
+	width: 90px;
+	height: 90px;
+	text-align: center;
+	font-size: 40px;
+	line-height: 90px;
+	/*opacity: 0;*/
+	-webkit-animation: phone 0.9s infinite;
+	        animation: phone 0.9s infinite;
+}
+.pulse:hover .phone i {
+	-webkit-transform: scale(0);
+	        transform: scale(0);
+	transition: 0.5s;
+}
+.phone i {
+	transition: 0.5s;
+}
+.txt {
+	opacity: 0;
+	font-size: 17px;
+	text-transform: uppercase;
+	position: absolute;
+	top: 25px;
+	transition: 0.5s;
+	-webkit-transform: scaleX(-1);
+	        transform: scaleX(-1);
+}
+.pulse:hover .txt {
+	transition: 0.5s;
+	opacity: 1;
+	-webkit-transform: scaleX(1);
+	        transform: scaleX(1);
+}
+.pulse:hover::before,
+.pulse:hover::after {
+	content: '';
+	position: absolute;
+	border: 1px solid #04AFFE;
+	border-radius: 50%;
+	left: -20px;
+	right: -20px;
+	top: -20px;
+	bottom: -20px;
+	opacity: 0;
+	-webkit-animation: pulse 1.8s linear infinite;
+	        animation: pulse 1.8s linear infinite;
+}
+.pulse:hover::after {
+	-webkit-animation-delay: 0.5s;
+	        animation-delay: 0.5s;:hover
+}
+@-webkit-keyframes phone {
+	0%, 100% {-webkit-transform: rotate(-20deg);transform: rotate(-20deg);}
+	50% {-webkit-transform: rotate(20deg);transform: rotate(20deg);}
+}
+@keyframes phone {
+	0%, 100% {-webkit-transform: rotate(-20deg);transform: rotate(-20deg);}
+	50% {-webkit-transform: rotate(20deg);transform: rotate(20deg);}
+}
+@-webkit-keyframes pulse {
+	0% {-webkit-transform: scale(0.5);transform: scale(0.5);
+		opacity: 0;}
+	50% {opacity: 1;}
+	100% {-webkit-transform: scale(1.2);transform: scale(1.2);
+		opacity: 0;}
+}
+@keyframes pulse {
+	0% {-webkit-transform: scale(0.5);transform: scale(0.5);
+		opacity: 0;}
+	50% {opacity: 1;}
+	100% {-webkit-transform: scale(1.2);transform: scale(1.2);
+		opacity: 0;}
+}
